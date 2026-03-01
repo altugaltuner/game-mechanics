@@ -22,7 +22,7 @@ export function preloadMagicWordsCache(): Promise<void> {
     const avatarUrls = (data.avatars ?? []).map((avatar) =>
       normalizeAssetUrl(avatar.url),
     );
-    const emojis = data.emojis ?? data.emojies ?? [];
+    const emojis = data.emojies ?? [];
     const emojiUrls = emojis.map((emoji) => normalizeAssetUrl(emoji.url));
     const urls = [BUBBLE_PATH, ...avatarUrls, ...emojiUrls];
 
@@ -83,7 +83,6 @@ async function getMagicWordsData(): Promise<MagicWordsApiResponse> {
     // Cache empty payload on failure so repeated calls remain deterministic.
     apiDataCache = {};
   }
-
   return apiDataCache ?? {};
 }
 

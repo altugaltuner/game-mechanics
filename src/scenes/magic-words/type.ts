@@ -25,7 +25,6 @@ export type DialogueItem = {
 
 export type MagicWordsApiResponse = {
   avatars?: AvatarItem[];
-  emojis?: EmojiItem[];
   emojies?: EmojiItem[];
   dialogue?: DialogueItem[];
 };
