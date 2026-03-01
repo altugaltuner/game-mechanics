@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { getEmojiTextureByName } from "./cache";
 import { MagicWordsSceneConfig } from "./config";
-import { renderInlineDialog } from "./DialogRenderer";
+import { renderInlineDialog } from "./dialog";
 import { magicWordsEvents } from "./events";
 import type {
   AvatarSlot,
