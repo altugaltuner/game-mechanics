@@ -25,7 +25,7 @@ class SceneManager {
   }
 
   start(): void {
-    window.addEventListener("popstate", this.onPopState);
+    globalThis.addEventListener("popstate", this.onPopState);
     void this.renderRoute();
   }
 
@@ -33,11 +33,11 @@ class SceneManager {
     void this.renderRoute();
   };
 
-  private navigate = (url: string): void => {
-    if (window.location.pathname === url) {
+  private readonly navigate = (url: string): void => {
+    if (globalThis.location.pathname === url) {
       return;
     }
-    window.history.pushState({}, "", url);
+    globalThis.history.pushState({}, "", url);
     void this.renderRoute();
   };
 
@@ -49,7 +49,7 @@ class SceneManager {
       this.cleanup = null;
     }
 
-    const path = window.location.pathname;
+    const path = globalThis.location.pathname;
 
     if (!GAME_ROUTES.has(path)) {
       this.setDocumentGameMode(false);

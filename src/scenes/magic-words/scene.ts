@@ -8,7 +8,7 @@ import {
   Texture,
 } from "pixi.js";
 import type { ManagedScene, ResizePayload } from "../../app/type";
-import type { AvatarSlot } from "./type";
+import type { AvatarSlot, SpeakerName } from "./type";
 import { MagicWordsSceneConfig } from "./config";
 import {
   getAvatarTextureByName,
@@ -20,7 +20,6 @@ import { DialogueAudio } from "./dialogueAudio";
 import { MagicWordsControls } from "./controls";
 import { MagicWordsDialogueFlow } from "./dialogueFlow";
 import { MagicWordsLayout } from "./layout";
-import type { SpeakerName } from "./type";
 
 export class MagicWordsScene implements ManagedScene {
 

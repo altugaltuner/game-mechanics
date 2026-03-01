@@ -13,4 +13,4 @@ async function bootstrap(): Promise<void> {
   startSceneManager(root as HTMLElement);
 }
 
-void bootstrap();
+await bootstrap();

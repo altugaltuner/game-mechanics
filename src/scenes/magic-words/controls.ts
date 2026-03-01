@@ -184,7 +184,7 @@ export class MagicWordsControls {
       });
   }
 
-  private togglePlayPause = (): void => {
+  private readonly togglePlayPause = (): void => {
     if (this.isAutoPlaying) {
       this.stopAutoPlay();
       return;
@@ -192,7 +192,7 @@ export class MagicWordsControls {
     this.startAutoPlay();
   };
 
-  private onNextButtonTap = (): void => {
+  private readonly onNextButtonTap = (): void => {
     if (!this.isAutoPlaying) {
       this.options.onShowNextDialogue();
       return;
@@ -218,7 +218,7 @@ export class MagicWordsControls {
       ? MagicWordsSceneConfig.interaction.autoPlayAudioSafetyTimeoutMs
       : MagicWordsSceneConfig.interaction.autoPlayIntervalMs;
     // Safety fallback continues autoplay even if the audio completion callback never fires.
-    this.autoPlayFallbackTimerId = window.setTimeout(
+    this.autoPlayFallbackTimerId = globalThis.setTimeout(
       handlePlaybackComplete,
       fallbackWaitMs,
     );
@@ -228,7 +228,7 @@ export class MagicWordsControls {
     if (this.autoPlayFallbackTimerId === null) {
       return;
     }
-    window.clearTimeout(this.autoPlayFallbackTimerId);
+    globalThis.clearTimeout(this.autoPlayFallbackTimerId);
     this.autoPlayFallbackTimerId = null;
   }
 

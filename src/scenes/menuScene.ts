@@ -18,7 +18,7 @@ export function renderMenuScene(
   options: MenuSceneOptions = {},
 ): void {
   preloadCoverImages();
-  const navigateTo = options.onNavigate ?? ((url: string) => window.location.assign(url));
+  const navigateTo = options.onNavigate ?? ((url: string) => globalThis.location.assign(url));
 
   const container = document.createElement("div");
   container.className = "menu-scene";

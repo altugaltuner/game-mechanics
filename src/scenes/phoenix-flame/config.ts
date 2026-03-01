@@ -21,13 +21,13 @@ export const FlameConfig = {
     radius: 150,
     hotspotOffsetY: 18,
     gradientStops: [
-      { offset: 0.0, color: "rgba(255,255,210,0.98)" },
+      { offset: 0, color: "rgba(255,255,210,0.98)" },
       { offset: 0.12, color: "rgba(255,235,155,0.95)" },
       { offset: 0.28, color: "rgba(255,190,95,0.88)" },
       { offset: 0.48, color: "rgba(255,135,50,0.72)" },
       { offset: 0.72, color: "rgba(255,95,25,0.42)" },
       { offset: 0.9, color: "rgba(255,85,20,0.14)" },
-      { offset: 1.0, color: "rgba(255,85,20,0)" },
+      { offset: 1, color: "rgba(255,85,20,0)" },
     ],
     fallback: {
       anchor: 0.5,

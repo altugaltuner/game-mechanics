@@ -82,7 +82,7 @@ class TweenLauncher {
     }
   }
 
-  private launch = (): void => {
+  private readonly launch = (): void => {
     const sprite = this.queue.shift();
     if (!sprite) {
       return;

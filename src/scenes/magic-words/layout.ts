@@ -33,8 +33,8 @@ export class MagicWordsLayout {
     const slotNames = Object.keys(
       MagicWordsSceneConfig.avatar.slots,
     ) as SpeakerName[];
-    for (let i = 0; i < slotNames.length; i++) {
-      const name = slotNames[i];
+    for (const element of slotNames) {
+      const name = element;
       const slot = this.options.slots[name];
       const cfg = MagicWordsSceneConfig.avatar.slots[name];
       const pos = cfg[orientation];

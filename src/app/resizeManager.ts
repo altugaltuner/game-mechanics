@@ -23,7 +23,7 @@ class ResizeManager {
       this.vv.addEventListener("scroll", this.fire);
     }
     window.addEventListener("resize", this.fire);
-    window.addEventListener("orientationchange", this.fire);
+    globalThis.addEventListener("orientationchange", this.fire);
     this.fire();
   };
 
@@ -33,10 +33,10 @@ class ResizeManager {
       this.vv.removeEventListener("scroll", this.fire);
     }
     window.removeEventListener("resize", this.fire);
-    window.removeEventListener("orientationchange", this.fire);
+    globalThis.removeEventListener("orientationchange", this.fire);
   };
 
-  private fire = (): void => {
+  private readonly fire = (): void => {
     const width = window.innerWidth;
     const height = window.innerHeight;
     const scale = Math.min(width / this.designWidth, height / this.designHeight);
