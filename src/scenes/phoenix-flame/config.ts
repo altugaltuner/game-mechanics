@@ -45,7 +45,7 @@ export const FlameConfig = {
   },
 
   placement: {
-    yOffset: -100,
+    yOffset: -60,
     torchYRatio: 1.4,
     torchScaleDivisor: 2,
   },

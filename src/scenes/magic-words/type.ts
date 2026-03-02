@@ -94,7 +94,6 @@ export type MagicWordsLayoutOptions = {
   backgroundFill: Graphics;
   backgroundPattern: Sprite;
   slots: Record<SpeakerName, AvatarSlot>;
-  headerText: Text;
   controlsContainer: Container;
   nextButton: Container;
   playPauseButton: Container;

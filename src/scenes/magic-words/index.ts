@@ -11,7 +11,6 @@ export const MagicWordsDesign = {
 async function ensureMagicWordsFontsReady(): Promise<void> {
   try {
     await Promise.all([
-      document.fonts.load('400 48px "Bungee"'),
       document.fonts.load('400 18px "Bungee"'),
       document.fonts.load('400 12px "Bungee"'),
       document.fonts.load('400 8px "Aldrich"'),

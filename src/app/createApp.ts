@@ -11,6 +11,8 @@ export async function createApp(
     antialias: true,
     backgroundColor: options.backgroundColor ?? 0x0b0d12,
     resizeTo: window,
+    resolution: window.devicePixelRatio ?? 1,
+    autoDensity: true,
   });
 
   app.canvas.style.position = "fixed";

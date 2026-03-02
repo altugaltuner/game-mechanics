@@ -31,12 +31,6 @@ export class MagicWordsScene implements ManagedScene {
   private readonly slots: Record<SpeakerName, AvatarSlot>;
   private readonly controlsContainer = new Container();
 
-  private readonly headerText = new Text({
-    text: MagicWordsSceneConfig.header.text,
-    style: MagicWordsSceneConfig.header.textStyle,
-    resolution: MagicWordsSceneConfig.header.resolution,
-  });
-
   private readonly nextButton = new Container();
   private readonly nextButtonBg = new Graphics();
 
@@ -88,7 +82,6 @@ export class MagicWordsScene implements ManagedScene {
     this.root.addChild(this.backgroundLayer);
     this.controlsContainer.addChild(this.nextButton, this.playPauseButton);
     this.root.addChild(
-      this.headerText,
       this.slots.Sheldon.container,
       this.slots.Penny.container,
       this.slots.Leonard.container,
@@ -108,7 +101,6 @@ export class MagicWordsScene implements ManagedScene {
       backgroundFill: this.backgroundFill,
       backgroundPattern: this.backgroundPattern,
       slots: this.slots,
-      headerText: this.headerText,
       controlsContainer: this.controlsContainer,
       nextButton: this.nextButton,
       playPauseButton: this.playPauseButton,

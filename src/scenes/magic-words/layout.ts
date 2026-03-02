@@ -57,11 +57,6 @@ export class MagicWordsLayout {
 
     const controlsX = width * 0.5;
     const controlsY = height - MagicWordsSceneConfig.button.bottomOffset;
-    this.options.headerText.anchor.set(0.5);
-    this.options.headerText.position.set(
-      width * 0.5,
-      MagicWordsSceneConfig.header.topOffset,
-    );
     this.options.controlsContainer.position.set(controlsX, controlsY);
     this.options.nextButton.position.set(nextCenterX, 0);
     this.options.playPauseButton.position.set(playPauseCenterX, 0);

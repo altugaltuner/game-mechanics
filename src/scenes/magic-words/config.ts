@@ -10,17 +10,6 @@ export const MagicWordsSceneConfig = {
     nextButton: "NextDialogueButton",
     playPauseButton: "PlayPauseButton",
   },
-  header: {
-    text: "Magic Words",
-    topOffset: 88,
-    resolution: 3,
-    textStyle: {
-      fill: 0xffffff,
-      fontSize: 48,
-      fontFamily: "Bungee, sans-serif",
-      fontWeight: "400",
-    } as const,
-  },
   interaction: {
     controlsGap: 12,
     buttonHoverOffset: -5,
