@@ -6,12 +6,14 @@ export async function createApp(
   options: CreateAppOptions = {},
 ): Promise<Application> {
   const app = new Application();
+  const deviceResolution = window.devicePixelRatio ?? 1;
+  const stableResolution = Math.max(1, Math.round(deviceResolution));
 
   await app.init({
     antialias: true,
     backgroundColor: options.backgroundColor ?? 0x0b0d12,
     resizeTo: window,
-    resolution: window.devicePixelRatio ?? 1,
+    resolution: stableResolution,
     autoDensity: true,
   });
 

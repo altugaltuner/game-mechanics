@@ -56,7 +56,7 @@ export const FlameConfig = {
     yOffsetMax: 80,
     yOffsetHeightRatio: 0.1,
     spawnJitterX: { min: -18, max: 18 },
-    spawnJitterY: { min: 4, max: 8 },
+    spawnJitterY: { min: -2, max: 2 },
   },
 
   particle: {
