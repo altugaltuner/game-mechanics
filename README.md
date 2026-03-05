@@ -1,5 +1,7 @@
 # Pixi Mechanics
 
+You can play them on this link : https://fascinating-manatee-1f351c.netlify.app/
+
 A PixiJS + TypeScript mini-game playground that hosts three scenes behind a menu:
 
 - `Ace of Shadows`
