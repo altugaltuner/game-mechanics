@@ -25,7 +25,7 @@ export function renderMenuScene(
 
   const title = document.createElement("h1");
   title.className = "menu-title";
-  title.textContent = "Softgame Mechanics";
+  title.textContent = "Pixi Mechanics";
 
   const grid = document.createElement("div");
   grid.className = "menu-grid";

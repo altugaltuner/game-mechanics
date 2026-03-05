@@ -156,5 +156,4 @@ export class MagicWordsDialogueFlow {
       gsap.killTweensOf(slot.dialogueContainer.scale);
     }
   }
-
 }

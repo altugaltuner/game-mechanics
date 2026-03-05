@@ -1,4 +1,4 @@
-# Softgames Assignment
+# Pixi Mechanics
 
 A PixiJS + TypeScript mini-game playground that hosts three scenes behind a menu:
 
