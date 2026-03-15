@@ -93,6 +93,22 @@ async function ensureTextureCached(url: string): Promise<Texture | null> {
     return existing;
   }
 
+  // Timeout helper
+  function fetchWithTimeout(resource: string, options: any = {}, timeout = 3000): Promise<Response> {
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error("timeout")), timeout);
+      fetch(resource, options)
+        .then(response => {
+          clearTimeout(timer);
+          resolve(response);
+        })
+        .catch(err => {
+          clearTimeout(timer);
+          reject(err);
+        });
+    });
+  }
+
   try {
     const response = await fetch(normalizedUrl);
     if (!response.ok) {
@@ -105,7 +121,21 @@ async function ensureTextureCached(url: string): Promise<Texture | null> {
     textureByUrl.set(normalizedUrl, texture);
     return texture;
   } catch {
-    return null;
+    // Fallback: load default avatar.png
+    const fallbackUrl = "/avatar.png"; // public/assets/avatar.png dosyasını ekle
+    try {
+      const fallbackResponse = await fetchWithTimeout(fallbackUrl, {}, 3000);
+      if (!fallbackResponse.ok) {
+        return null;
+      }
+      const fallbackBlob = await fallbackResponse.blob();
+      const fallbackBitmap = await createImageBitmap(fallbackBlob);
+      const fallbackTexture = Texture.from(fallbackBitmap);
+      textureByUrl.set(normalizedUrl, fallbackTexture); // Orijinal url için fallback kaydediliyor
+      return fallbackTexture;
+    } catch {
+      return null;
+    }
   }
 }
 
